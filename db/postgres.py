@@ -19,7 +19,7 @@ def get_orientadores():
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute(
-        "select id,numero_usp,nome,tipo,categoria,data_inicial_credenciamento,data_final_credenciamento,email, ativo from orientadores order by nome"
+        "select id,numero_usp,nome,tipo,categoria,data_inicial_credenciamento,data_final_credenciamento,email, ativo from orientadores order by  ativo desc , nome"
     )
     orientadores = cursor.fetchall()
     cursor.close()
